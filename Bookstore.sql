@@ -106,7 +106,7 @@ CREATE TABLE cust_order (
     cust_order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT,
     cust_order_date DATE,
-    address_status_id INT,
+    order_status_id INT,
     shipping_method_id INT,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
     FOREIGN KEY (order_status_id) REFERENCES order_status(order_status_id),
