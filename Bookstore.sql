@@ -135,3 +135,23 @@ CREATE TABLE order_history (
 );
 -- this code has been according to the optimal schema design and the relationships between the tables have been established using foreign keys.
 -- The database is designed to manage a bookstore's inventory, customer information, and order processing.
+
+-- bolow is the code to create users
+-- Step 1: Create Users
+CREATE USER 'admin_user'@'localhost' IDENTIFIED BY 'AdminPass123!';
+CREATE USER 'developer_user'@'localhost' IDENTIFIED BY 'DevPass123!';
+CREATE USER 'regular_user'@'localhost' IDENTIFIED BY 'UserPass123!';
+
+-- Step 2: Grant Admin Privileges (ALL)
+GRANT ALL PRIVILEGES ON bookstore_db.* TO 'admin_user'@'localhost' WITH GRANT OPTION;
+
+-- Step 3: Grant Developer Privileges (Read/Write/Modify schema, no user management)
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX ON bookstore_db.* TO 'developer_user'@'localhost';
+
+-- Step 4: Grant Regular User Privileges (Read-Only Access)
+GRANT SELECT ON bookstore_db.book TO 'regular_user'@'localhost';
+GRANT SELECT ON bookstore_db.author TO 'regular_user'@'localhost';
+GRANT SELECT ON bookstore_db.cust_order TO 'regular_user'@'localhost';
+
+-- Step 5: Apply Changes
+FLUSH PRIVILEGES;
