@@ -1,8 +1,6 @@
 /*
 -- Query: SELECT * FROM bookstore_db.address
 LIMIT 0, 1000
-
--- Date: 2025-04-12 10:55
 */
 INSERT INTO `` (`address_id`,`address_street`,`address_city`,`postal_code`,`country_id`)
 VALUES (53,'Fichardt','Vanderbijlpark','1911',NULL);
