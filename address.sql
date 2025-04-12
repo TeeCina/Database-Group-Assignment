@@ -13,6 +13,7 @@ VALUES (55,'Mpinga','Alexandra','7820',NULL);
 
 INSERT INTO `` (`address_id`,`address_street`,`address_city`,`postal_code`,`country_id`)
 VALUES (56,'Gcina','Polokwane','0124',NULL);
+
 INSERT INTO `` (`address_id`,`address_street`,`address_city`,`postal_code`,`country_id`)
 VALUES (57,'Plaatjie','Soweto','4561',NULL);
 
